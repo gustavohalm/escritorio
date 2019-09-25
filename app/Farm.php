@@ -12,7 +12,7 @@ class Farm extends Model
 
     public function cadesps()
     {
-        return $this->has_many('App\Cadesp', 'farm_id');
+        return $this->hasMany('App\Cadesp', 'farm_id');
     }
 
 }
