@@ -15,6 +15,8 @@ class CreateAgriculturalsTable extends Migration
     {
         Schema::create('agriculturals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('cnpj');            
             $table->timestamps();
         });
     }

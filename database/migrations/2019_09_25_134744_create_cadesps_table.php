@@ -15,6 +15,13 @@ class CreateCadespsTable extends Migration
     {
         Schema::create('cadesps', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nirf');
+            $table->string('ccir');
+            $table->string('hectar_nirf');
+            $table->string('hectar_ccir');
+            $table->string('matricula');
+            $table->unsignedBigInteger('farm_id');
+            $table->foreign('farm_id')->references('id')->on('farms');
             $table->timestamps();
         });
     }

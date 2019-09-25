@@ -22,7 +22,8 @@ class CreateFarmsTable extends Migration
             $table->string('observation');
             $table->string('type');
             $table->string('nirf');
-            $table->string('ccir');            
+            $table->string('ccir');        
+            $table->string('matricula');    
             $table->timestamps();
         });
     }
