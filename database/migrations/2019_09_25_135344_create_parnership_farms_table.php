@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFarmsTable extends Migration
+class CreateParnershipFarmsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,8 @@ class CreateFarmsTable extends Migration
      */
     public function up()
     {
-        Schema::create('farms', function (Blueprint $table) {
+        Schema::create('parnership_farms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('city');
-            $table->string('cnpj');
-            $table->string('ie');
-            $table->string('observation');
-            $table->string('type');
-            $table->string('nirf');
-            $table->string('ccir');            
             $table->timestamps();
         });
     }
@@ -34,6 +26,6 @@ class CreateFarmsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farms');
+        Schema::dropIfExists('parnership_farms');
     }
 }
