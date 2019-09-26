@@ -17,6 +17,6 @@ class Farm extends Model
 
     public function partnerships()
     {
-        return $this-hasMany('App\PartnershipFarm', 'farm_id')
+        return $this-hasMany('App\PartnershipFarm', 'farm_id');
     }
 }

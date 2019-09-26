@@ -22,7 +22,7 @@ class CreateParnershipAgriculturalsTable extends Migration
 
 
             $table->foreign('farmer_id')->references('id')->on('farmers');
-            $table->foreign('agricultural_id')-references('id')->on('agriculturals');
+            $table->foreign('agricultural_id')->references('id')->on('agriculturals');
         });
     }
 
