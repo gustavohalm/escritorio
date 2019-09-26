@@ -15,7 +15,14 @@ class CreateParnershipAgriculturalsTable extends Migration
     {
         Schema::create('parnership_agriculturals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('farmer_id');
+            $table->unsignedBigInteger('agricultural_id');
+            $table->decimal('percent', 3,2);
             $table->timestamps();
+
+
+            $table->foreign('farmer_id')->references('id')->on('farmers');
+            $table->foreign('agricultural_id')-references('id')->on('agriculturals');
         });
     }
 

@@ -15,4 +15,8 @@ class Farm extends Model
         return $this->hasMany('App\Cadesp', 'farm_id');
     }
 
+    public function partnerships()
+    {
+        return $this-hasMany('App\PartnershipFarm', 'farm_id')
+    }
 }
