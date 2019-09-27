@@ -17,21 +17,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/user', function () {
     return UserResource::collection(User::all());
 });
+
+Route::get('/user/{id}', function($id) { 
+    return UserResource::make(User::find($id));
+});
+
+Route::post('/user', function(Request $request) {
+    return UserResource::make( User::create( $request->all() ));
+} );
+
