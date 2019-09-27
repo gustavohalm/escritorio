@@ -12,6 +12,6 @@ class Agricultural extends Model
 
     public function partnerships()
     {
-        return $this->hasMany('App\PartinershipAgricultural', 'agricultural_id');
+        return $this->hasMany('App\ParnershipAgricultural');
     }
 }

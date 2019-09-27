@@ -28,3 +28,7 @@ Route::post('farm', 'FarmController@store');
 Route::get('agricultural', 'AgriculturalController@index');
 Route::get('agricultural/{id}', 'AgriculturalController@show');
 Route::post('agricultural', 'AgriculturalController@store');
+Route::get('parnership-agricultural', 'ParnershipAgriculturalController@index');
+Route::get('agricultural/{agricultural_id}/parnership', 'ParnershipAgriculturalController@per_agricultural');
+Route::get('parnership-agricultural/{id}', 'ParnershipAgriculturalController@show');
+Route::post('parnership-agricultural', 'ParnershipAgriculturalController@store');

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\ParnershipAgricultural;
 use App\Agricultural;
 use Illuminate\Http\Request;
 
-class AgriculturalController extends Controller
+class ParnershipAgriculturalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,13 @@ class AgriculturalController extends Controller
     public function index()
     {
         //
-        return response()->json(Agricultural::all());
+        return response()->json(ParnershipAgricultural::all());
     }
-
+    public function per_agricultural($agricultural_id)
+    {
+        $parnerships = ParnershipAgricultural::all()->where('agricultural_id', $agricultural_id);
+        return response()->json($parnerships);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -26,14 +31,13 @@ class AgriculturalController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,
-            [
-                'name'=>'required',
-                'cnpj' => 'required'
-            ]        
-        );
-    
-        return Agricultural::create($request->all());
+        $this->validate($request, [
+            'agricultural_id' => 'required',
+            'farmer_id' => 'required',
+            'percent' => 'required'
+        ]);
+        
+        return ParnershipAgricultural::create($request->all());
     }
 
     /**
@@ -45,8 +49,7 @@ class AgriculturalController extends Controller
     public function show($id)
     {
         //
-        $agricultural = Agricultural::find($id);
-        return response()->json($agricultural);
+        return response()->json(ParnershipAgricultural::find($id));
     }
 
     /**
